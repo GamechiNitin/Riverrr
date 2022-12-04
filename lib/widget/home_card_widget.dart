@@ -31,10 +31,8 @@ class HomeCardWidget extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         margin: const EdgeInsets.only(bottom: 16),
         decoration: BoxDecoration(
-          // color: klightBlack,
           borderRadius: BorderRadius.circular(5),
           color: Colors.grey[300],
-          // borderRadius: BorderRadius.circular(50),
           boxShadow: const [
             BoxShadow(
               color: Color(0xFFBEBEBE),

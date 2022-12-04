@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'package:riverrr/constant/import.dart';
 
 class LocalData {
- 
   static Future<bool> launchURL() async {
     Uri link = Uri.parse(gitString);
     log(link.toString());
