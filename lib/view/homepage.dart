@@ -73,7 +73,8 @@ class _HomePageState extends State<HomePage> {
               );
             }
 
-            return snapshot.data != null
+            return snapshot.data != null &&
+                    snapshot.data?.docs.isNotEmpty != null
                 ? ListView(
                     padding: const EdgeInsets.all(20),
                     shrinkWrap: true,
@@ -147,7 +148,12 @@ class _HomePageState extends State<HomePage> {
                       );
                     }).toList(),
                   )
-                : const SizedBox();
+                : SizedBox(
+                    height: MediaQuery.of(context).size.height / 1.2,
+                    child: const Center(
+                      child: Text('No People Added Yet!'),
+                    ),
+                  );
           },
         ),
       ),

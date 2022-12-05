@@ -91,52 +91,56 @@ class HomeCardWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      if (email != '')
-                        TextWidget(
-                          label: "Email : ",
-                          value: email,
-                        ),
-                      if (phone != '')
-                        TextWidget(
-                          label: "Phone : ",
-                          value: phone,
-                        ),
-                      if (bod != '')
-                        TextWidget(
-                          label: "Birthdate : ",
-                          value: bod,
-                        ),
-                    ],
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        if (email != '')
+                          TextWidget(
+                            label: "Email : ",
+                            value: email,
+                          ),
+                        if (phone != '')
+                          TextWidget(
+                            label: "Phone : ",
+                            value: phone,
+                          ),
+                        if (bod != '')
+                          TextWidget(
+                            label: "Birthdate : ",
+                            value: bod,
+                          ),
+                      ],
+                    ),
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      if (address != '')
-                        TextWidget(
-                          label: "Address : ",
-                          value: address,
-                        ),
-                      if (state != '')
-                        TextWidget(
-                          label: "State : ",
-                          value: state,
-                        ),
-                      if (city != '')
-                        TextWidget(
-                          label: "City : ",
-                          value: city,
-                        ),
-                      if (zip != '')
-                        TextWidget(
-                          label: "ZipCode : ",
-                          value: zip,
-                        ),
-                    ],
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        if (address != '')
+                          TextWidget(
+                            label: "Address : ",
+                            value: address,
+                          ),
+                        if (state != '')
+                          TextWidget(
+                            label: "State : ",
+                            value: state,
+                          ),
+                        if (city != '')
+                          TextWidget(
+                            label: "City : ",
+                            value: city,
+                          ),
+                        if (zip != '')
+                          TextWidget(
+                            label: "ZipCode : ",
+                            value: zip,
+                          ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -156,6 +160,8 @@ class TextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
       text: TextSpan(
         text: label,
         style: const TextStyle(
